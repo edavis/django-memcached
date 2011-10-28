@@ -14,9 +14,7 @@ def get_cache_server_list():
     cache configurations.
 
     """
-    def check_memcached(engine):
-        if 'memcached' not in engine:
-            raise ImproperlyConfigured("django-memcached only works with memcached.  Currently using '%s'" % engine)
+    engine = ''
 
     # Django >= 1.3
     #
@@ -27,7 +25,6 @@ def get_cache_server_list():
     try:
         from django.core.cache import parse_backend_conf, DEFAULT_CACHE_ALIAS
         engine, hosts, params = parse_backend_conf(DEFAULT_CACHE_ALIAS)
-        check_memcached(engine)
 
     # Django < 1.3
     #
@@ -35,7 +32,9 @@ def get_cache_server_list():
     except ImportError:
         from django.core.cache import parse_backend_uri
         engine, hosts, params = parse_backend_uri(settings.CACHE_BACKEND)
-        check_memcached(engine)
+
+    if 'memcached' not in engine:
+        raise ImproperlyConfigured("django-memcached only works with memcached.  Currently using '%s'" % engine)
 
     return hosts if isinstance(hosts, list) else hosts.split(';')
 
