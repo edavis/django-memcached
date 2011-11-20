@@ -34,7 +34,7 @@ def get_cache_server_list():
         engine, hosts, params = parse_backend_uri(settings.CACHE_BACKEND)
 
     if 'memcached' not in engine:
-        raise ImproperlyConfigured("django-memcached only works with memcached.  Currently using '%s'" % engine)
+        raise ImproperlyConfigured("django-memcached2 only works with memcached.  Currently using '%s'" % engine)
 
     return hosts if isinstance(hosts, list) else hosts.split(';')
 
