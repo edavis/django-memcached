@@ -4,7 +4,7 @@ setup(
     name                 = 'django-memcached2',
     version              = '0.1',
     description          = 'django-memcached2 displays statistics about your currently running memcached instances',
-    long_description     = open('README').read(),
+    long_description     = open('README.rst').read(),
     keywords             = 'memcached, django, caching, caches',
     author               = 'Eric Davis',
     author_email         = 'ed@npri.org',
