@@ -3,6 +3,7 @@ from django.shortcuts import render_to_response
 from django.conf import settings
 from django.template import RequestContext
 from django.core.exceptions import ImproperlyConfigured
+from django.views.decorators.cache import never_cache
 
 from django_memcached.util import get_memcached_stats
 from django.contrib.auth.decorators import user_passes_test
@@ -38,6 +39,7 @@ def get_cache_server_list():
 
     return hosts if isinstance(hosts, list) else hosts.split(';')
 
+@never_cache
 def server_list(request):
     servers = get_cache_server_list()
     statuses = []
@@ -53,6 +55,7 @@ def server_list(request):
         context_instance=RequestContext(request)
     )
 
+@never_cache
 def server_status(request, index):
     servers = get_cache_server_list()
     try:
