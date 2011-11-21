@@ -4,10 +4,10 @@ django-memcached2
 django-memcached2 is a lightweight, resuable Django app that displays
 statistics about your currently running memcached instances.
 
-It is a fork of Eric Florenzano's `django-memcached`_ that works with the
+It is a fork of Eric Florenzano's django-memcached_ that works with the
 CACHES settings introduced in Django 1.3.
 
-_django-memcached: https://github.com/ericflo/django-memcached
+.. _django-memcached: https://github.com/ericflo/django-memcached
 
 Installing django-memcached2
 ----------------------------
