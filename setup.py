@@ -3,7 +3,11 @@ from setuptools import setup, find_packages
 setup(
     name                 = 'django-memcached2',
     version              = '0.1',
-    description          = 'django-memcached2 displays statistics about your currently running memcached instances',
+    description          = """
+django-memcached2 displays statistics about your currently running
+memcached instances.  It's a fork of django-memcached that works with
+the new-style CACHES setting introduced in Django 1.3.
+""",
     long_description     = open('README.rst').read(),
     keywords             = 'memcached, django, caching, caches',
     author               = 'Eric Davis',
