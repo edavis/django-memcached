@@ -34,7 +34,7 @@
             <tbody>
                 {% for i,server,stats in statuses %}
                     <tr class="{% cycle even,odd %}">
-                        <td><a href="{% url django_memcached.views.server_status i %}">{{ server }}</a></td>
+                        <td><a href="{% url 'django_memcached.views.server_status' i %}">{{ server }}</a></td>
                         <td>{{ stats.curr_items }}</td>
                         <td>{{ stats.get_hits }}</td>
                         <td>{{ stats.cmd_get }}</td>
