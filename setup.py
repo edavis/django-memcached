@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name                 = 'django-memcached2',
-    version              = '0.1',
+    version              = '0.2',
     description          = """
 django-memcached2 displays statistics about your currently running
 memcached instances.  It's a fork of django-memcached that works with
