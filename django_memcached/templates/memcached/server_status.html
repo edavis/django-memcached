@@ -19,7 +19,7 @@
     </head>
     <body>
         <h1>Memcached Stats for {{ server }}</h1>
-        <a id="back" href="{% url django_memcached.views.server_list %}">&larr; Back to List</a>
+        <a id="back" href="{% url 'django_memcached.views.server_list' %}">&larr; Back to List</a>
         <div id="tablecontainer">
             <table>
                 <tbody>
